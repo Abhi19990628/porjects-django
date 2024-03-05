@@ -34,7 +34,41 @@
       <button type="submit" class="btn btn-success">Add Rescipe</button>
     </form>
     
+    
+  
+      
+   
+    <table class="table" mt-5>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Rescipe name</th>
+          <th scope="col">Rescipe discriptions</th>
+          <th scope="col">Rescipe image</th>
+          <th scope="col">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for Rescipe in rescipe %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{Rescipe.rescipe_name }}</td>
+          <td>{{Rescipe.rescipe_description }}</td>
+          <td>
+            <img src="/MEDIA/{{Rescipe.rescipe_image}}/" style="height:100px" >
+          </td>
+          <td>
+            <a href="/delete-rescipe/{{Rescipe.id}}" class="btn btn-danger">Delete</a>
+          </td>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  
   </div>   
+
+
+  
     <!-- End Example Code -->
   </body>
 </html>

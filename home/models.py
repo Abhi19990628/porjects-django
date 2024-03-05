@@ -6,7 +6,4 @@ class student(models.Model):
     age=models.IntegerField()
     email=models.EmailField()
     address=models.TextField()
-    image=models.ImageField()
-    
-class product(models.Model):
-    pass
+    image=models.ImageField(upload_to ="student")
